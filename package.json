@@ -1,0 +1,8 @@
+{
+    "name": "Brain",
+    "description": "Brain reactions emulation",
+    "version": "2.1.0",
+    "author": "Michael Kechinov",
+    "dependencies": {},
+    "devDependencies": {}
+}
