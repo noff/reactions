@@ -1,24 +1,31 @@
-// Источник воздействия
-var _reactor = null;
+var Reaction = function() {
+    
+    // Источник воздействия
+    this._reactor = null;
 
-// Ощущение
-var _sense = null;
+    // Ощущение
+    this._sense = null;
+    
+};
+
+
+
 
 /**
  * Influence something
  * @param Object Источник воздействия, тот, который воздействует на текущую реакцию
  */
-exports.influence = function(reactor) {
+Reaction.prototype.influence = function(reactor) {
 	
     // Something or somebody influenced
-//    if(typeof(reactor) != 'undefined') {
-//        _reactor = reactor;
-//    }
+    if(typeof(reactor) != 'undefined') {
+        _reactor = reactor;
+    }
     
     console.log("I am influenced");
     
     // Find out sense
-    sense();
+    this.sense();
     
 };
 
@@ -26,12 +33,12 @@ exports.influence = function(reactor) {
  * Sense influence
  * Senses: психологические, физиологические
  */
-exports.sense = function() {
+Reaction.prototype.sense = function() {
 	
     console.log("I sense");
     
     // React
-    react();
+    this.react();
     
 };
 
@@ -39,18 +46,17 @@ exports.sense = function() {
  * React on sense
  * @param Object Объект воздействия, если воздействовали (или другая реакция)
  */
-exports.react = function(reaction) {
+Reaction.prototype.react = function(reaction) {
 
     console.log("I react");
 
-
     // Something or somebody influenced
-//    if(typeof(reaction) != 'undefined') {
-//        influence(reaction)
-//    }
+    if(typeof(reaction) != 'undefined') {
+        influence(reaction)
+    }
 
     // Learn
-    learn();
+    this.learn();
 	
 };
 
@@ -58,7 +64,7 @@ exports.react = function(reaction) {
 /**
  * Обучение: запомнить на будущее.
  */
-exports.learn = function() {
+Reaction.prototype.learn = function() {
     
     console.log("I learn");
     
